@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="Patient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PatientRepositoryTest.cs" />
+    <Compile Include="ProductRepositioryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

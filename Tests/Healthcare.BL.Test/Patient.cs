@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StudentBasics.BL;
+using Healthcare.BL;
 
 namespace Healthcare.BL.Test
 {
@@ -76,5 +76,40 @@ namespace Healthcare.BL.Test
             Assert.AreEqual(3, Patient.Patient_Visit_Count);
 
         }
+
+        [TestMethod]
+        public void ValidateValid()
+        {
+            var patient = new Patient();
+            patient.Lastname = "John Doe";
+            patient.EmailAddress = "johndoe@email.com";
+
+            var expected = true;
+
+            var actual = patient.Validate();
+
+            Assert.AreEqual(expected, actual);
+
+        }
+         
+
+        //[TestMethod]
+        //This Method will fails becuase didnt added lastname
+        //public void ValidateLastname()
+        //{
+        //    var patient = new Patient();
+            
+        //    patient.EmailAddress = "johndoe@email.com";
+
+        //    var expected = true;
+
+        //    var actual = patient.Validate();
+
+        //    Assert.AreEqual(expected, actual);
+
+        //}
+
+
+
     }
 }
