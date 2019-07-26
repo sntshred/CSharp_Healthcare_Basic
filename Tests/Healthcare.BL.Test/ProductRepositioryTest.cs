@@ -21,8 +21,45 @@ namespace Healthcare.BL.Test
             Assert.AreEqual(exptected.ProductName, actual.ProductName);
             Assert.AreEqual(exptected.CurrentPrice, actual.CurrentPrice);
          
+        }
+
+        [TestMethod]
+        public void SaveTestValid()
+        {
+            var prodcutRepository = new ProductRepositiory();
+            var updateProduct = new Product(2)
+            {
+                CurrentPrice = 18M,
+                ProductName = "Mobile",
+                HasChanges = true
+
+            };
+
+            var acutal = prodcutRepository.Save(updateProduct);
+            Assert.AreEqual(true, acutal);
+             
+
+        }
+
+        [TestMethod]
+        public void SaveTestInValid()
+        {
+            var prodcutRepository = new ProductRepositiory();
+            var updateProduct = new Product(2)
+            {
+                CurrentPrice = null,
+                ProductName = "Mobile",
+                HasChanges = true
+
+            };
+
+            var acutal = prodcutRepository.Save(updateProduct);
+            Assert.AreEqual(true, acutal);
 
 
         }
+
+
+
     }
 }

@@ -13,7 +13,7 @@ namespace Healthcare.BL
     }
     public abstract class EntityBaseClass
     {
-        public bool HasChanges { get; private set; }
+        public bool HasChanges { get;  set; }
         public bool IsNew { get; set; }
         public bool IsValid { get
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Acme.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,20 @@ namespace Healthcare.BL
         }
 
         public int ProductId { get; private set; }
-        public  string ProductName { get; set; }
+
+        private string _productName;
+
+        public string ProductName
+        {
+            get {
+                 
+                return _productName.InsertSpaces();
+
+            }
+
+            set { _productName = value; }
+        }
+         
         public string  Description { get; set; }
 
         public decimal? CurrentPrice{ get; set; }
